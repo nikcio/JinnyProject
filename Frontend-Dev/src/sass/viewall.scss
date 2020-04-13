@@ -1,0 +1,217 @@
+section.viewall{
+    margin: 10vh auto;
+    width: 100%;
+    max-width: 1000px;
+
+    h1{
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 48px;
+        line-height: 55px;
+        align-items: center;
+        
+        color: #000000;
+    }
+
+    h1::after{
+        content: "";
+        border-bottom: 1px solid #000000;
+        width: 60%;
+        height: 10px;
+        display: block;
+    }
+
+    div.collcetion {
+        margin-top: 30px;
+        
+        div.row a.item{
+            display: inline-block;
+            text-decoration: none;
+            width: 33%;
+            img{
+                display: block;
+                width: 300px;
+                height: 200px;
+            }
+
+            span{
+                display: block;
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 30px;
+                line-height: 34px;
+                color: #000000;
+                margin: 20px 30px;
+            }
+        }
+    }
+
+    a.viewall{
+        border: 2px solid #000000;
+        box-sizing: border-box; 
+
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 30px;
+        line-height: 34px;
+        align-items: center;
+        text-align: center;
+        
+        color: #000000;
+        display: block;
+        width: 100%;
+        max-width: 400px;
+        height: 80px;
+        padding-top: 20px;
+        margin: 30px auto;
+        .iconify.icon{
+            font-size: 32px;
+            position: relative;
+            top: 7px;
+        }
+    }
+}
+
+@media only screen and (max-width: 800px){
+    section.viewall{    
+        text-align: center;
+
+        h1{
+            margin: 10px auto;
+        }
+
+        h1::after{
+            border-bottom: 1px solid #000000;
+            width: 60%;
+            height: 10px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        div.collcetion div.row a.item{
+            display: block;
+            text-decoration: none;
+            width: 100%;
+            margin-bottom: 60px;
+
+            img{
+                margin: 0 auto;
+            }
+        }
+    
+        a.viewall{
+            width: 90%;
+        }
+    }
+}
+
+@media only screen and (min-width: 800px){
+    section.viewall{    
+        text-align: center;
+
+        h1{
+            margin: 10px auto;
+        }
+
+        h1::after{
+            border-bottom: 1px solid #000000;
+            width: 60%;
+            height: 10px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        div.collcetion div.row a.item{
+            display: inline-block;
+            text-decoration: none;
+            width: 40%;
+            margin-bottom: 60px;
+
+            img{
+                margin: 0 auto;
+            }
+        }
+    
+        a.viewall{
+            width: 90%;
+        }
+    }
+}
+
+@media only screen and (min-width: 1210px){
+    section.viewall{
+        margin: 10vh auto;
+        width: 100%;
+        max-width: 1000px;
+
+        h1{
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 48px;
+            line-height: 55px;
+            align-items: center;
+            
+            color: #000000;
+        }
+
+        h1::after{
+            content: "";
+            border-bottom: 1px solid #000000;
+            width: 60%;
+            height: 10px;
+            display: block;
+        }
+
+        div.collcetion div.row a.item{
+            display: inline-block;
+            text-decoration: none;
+            width: 33%;
+            img{
+                display: block;
+                width: 300px;
+                height: 200px;
+            }
+
+            span{
+                display: block;
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 30px;
+                line-height: 34px;
+                color: #000000;
+                margin: 20px 30px;
+            }
+        }
+
+        a.viewall{
+            border: 2px solid #000000;
+            box-sizing: border-box; 
+
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 30px;
+            line-height: 34px;
+            align-items: center;
+            text-align: center;
+            
+            color: #000000;
+            display: block;
+            width: 100%;
+            max-width: 400px;
+            height: 80px;
+            padding-top: 20px;
+            margin: 30px auto;
+            .iconify.icon{
+                font-size: 32px;
+                position: relative;
+                top: 7px;
+            }
+        }
+    }
+}

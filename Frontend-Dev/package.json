@@ -28,14 +28,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AUTHOR/PROJECT_NAME.git"
+    "url": "git+https://github.com/nikcio/JinnyProject.git"
   },
   "author": "Webtimisten",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AUTHOR/PROJECT_NAME/issues"
+    "url": "https://github.com/nikcio/JinnyProject/issues"
   },
-  "homepage": "https://github.com/AUTHOR/PROJECT_NAME#readme",
+  "homepage": "https://github.com/nikcio/JinnyProject#readme",
   "browserslist": [
     "defaults"
   ]

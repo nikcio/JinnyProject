@@ -34,11 +34,15 @@ const rename = require("gulp-rename");
 const browserSync = require('browser-sync');
 
 // Paths
+const path = require('path');
 const config = require('./gulp-config');
 
 // Select the html files to inject css and js into
 const pagesToInject = [
-    "/html/index.html"
+	"html/index.html",
+	"html/viewall.html",
+	"html/about.html",
+	"html/detail.html"
 ];
 
 const basePages = [];
@@ -57,23 +61,23 @@ pagesToInject.forEach(function(element) {
 // --------------------------------------------------
 function svg() {
 	return gulp.src(config.svg)
-		.pipe(svgmin(function(file) { // Minify and clean up svg files
-			const prefix = path.basename(file.relative, path.extname(file.relative));
-			return {
-				plugins: [
-					{ cleanupIDs: { prefix: prefix + "-", minify: true } },
-					{ removeDoctype: true },
-					{ removeComments: true },
-					{ cleanupNumericValues: { floatPrecision: 2 } },
-					{ removeAttrs: { attrs: '(fill|stroke)' } }
-				]
-			}
-		}) )
-		.pipe(svgstore({ inlineSvg: true })) // Combine into 1 sprite sheet
-		.pipe(cheerio(function($) { // Modify resulting <svg> element
-			$('svg').attr('style', 'display:none');
-		}))
-		.pipe(rename('combined.svg'))
+		// .pipe(svgmin(function(file) { // Minify and clean up svg files
+		// 	const prefix = path.basename(file.relative, path.extname(file.relative));
+		// 	return {
+		// 		plugins: [
+		// 			{ cleanupIDs: { prefix: prefix + "-", minify: true } },
+		// 			{ removeDoctype: true },
+		// 			{ removeComments: true },
+		// 			{ cleanupNumericValues: { floatPrecision: 2 } },
+		// 			{ removeAttrs: { attrs: '(fill|stroke)' } }
+		// 		]
+		// 	}
+		// }) )
+		// .pipe(svgstore({ inlineSvg: true })) // Combine into 1 sprite sheet
+		// .pipe(cheerio(function($) { // Modify resulting <svg> element
+		// 	$('svg').attr('style', 'display:none');
+		// }))
+		// .pipe(rename('combined.svg'))
 		.pipe(gulp.dest( config.distSVG))
 };
 
@@ -186,7 +190,7 @@ function serve(done) {
 
 function watch (){
 	gulp.watch(config.js, gulp.series(JSFormat, reload));
-	gulp.watch(config.sass, gulp.series(sassFormat));
+	gulp.watch(config.sass, gulp.series(sassFormat, reload));
 	gulp.watch(config.images, gulp.series(images));
 	gulp.watch(config.video, gulp.series(video));
 	gulp.watch(config.svg, gulp.series(svg));
