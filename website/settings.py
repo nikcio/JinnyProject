@@ -80,9 +80,9 @@ WSGI_APPLICATION = 'website.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'JinnyProject',
-        'USER': 'nikcio_JinnyProject',
-        'PASSWORD': 'I5*%!mQ5&pTL^3YFRy##WvOZU&!cHOIyE2Nr',
+        'NAME': 'jinnyproject',
+        'USER': 'nikcio',
+        'PASSWORD': 'rLwJHk0k5l&XY&qBfHj50i@9C*Rl9w6a8zRB1ICqFE@@ck1^mBQLRe8xepSbQ2cG2V',
         'HOST': 'localhost',
         'PORT': '',
     }
