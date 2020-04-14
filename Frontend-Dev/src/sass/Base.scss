@@ -1,2 +1,11 @@
+a{
+    text-decoration: none;
+}
+
+img{
+    object-fit: cover;
+}
+
+@import 'live-now.scss';
 @import 'nav.scss';
 @import 'footer.scss';

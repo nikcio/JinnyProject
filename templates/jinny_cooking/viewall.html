@@ -1,0 +1,32 @@
+{% extends "jinny_cooking/master.html" %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'jinny_cooking/css/viewall.css' %}">
+{% endblock %}
+
+{% block header %}
+
+{% endblock %}
+
+{% block content %}
+    <section class="viewall">
+        <h1>Recipes</h1>
+        <div class="collcetion">
+            <div class="row">
+                <a class="item" href="#">
+                    <img src="{% static 'jinny_cooking/img/pic.png' %}">
+                    <span>Milk steak</span>
+                </a>
+                <a class="item" href="#">
+                    <img src="{% static 'jinny_cooking/img/pic.png' %}">
+                    <span>Milk steak</span>
+                </a>
+                <a class="item" href="#">
+                    <img src="{% static 'jinny_cooking/img/pic.png' %}">
+                    <span>Milk steak</span>
+                </a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

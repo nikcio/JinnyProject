@@ -1,0 +1,40 @@
+{% extends "jinny_cooking/master.html" %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'jinny_cooking/css/frontpage.css' %}">
+{% endblock %}
+
+{% block header %}
+    <section class="top">
+        <div class="title">
+            <h1>Find new and exciting recipes</h1>
+            <h2>Disclaimer: Everything beyond this point is at your own risk</h2>
+            <a href="#scroll-section"><span class="iconify down" data-inline="false" data-icon="bx:bx-chevron-down" style="font-size: 88px;"></span></a>
+        </div>
+        <div class="poly">
+            <img src="{% static 'jinny_cooking/img/Poly-Frontpage.png' %}" class="frontpage-poly">
+            <img src="{% static 'jinny_cooking/img/JinnyDance.gif' %}" class="gif">
+        </div>
+    </section>
+{% endblock %}
+
+{% block content %}
+    <section class="middle" id="#scroll-section">
+        <h3>Recipes</h3>
+        <div class="collcetion">
+            <div class="row">
+                {% for recipe in recipes %}
+                <a class="item" href="{{recipe.get_absolute_url}}">
+                    <img src="/{{recipe.image}}">
+                    <span>{{recipe.title}}</span>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        <a href="/viewall" class="viewall">
+           View all recipes
+            <span class="iconify icon" data-inline="false" data-icon="ic:outline-arrow-right-alt"></span>
+        </a>
+    </section>
+{% endblock %}
