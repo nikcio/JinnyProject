@@ -25,7 +25,7 @@ var root = 'src/',
 // isBuild will determine if css and js will be minified
 // createSourcemaps will determine if sassFormat will create sourcemaps
 const settings = {
-	isBuild: false,
+	isBuild: true,
 	createSourcemaps: false
 };
 	
