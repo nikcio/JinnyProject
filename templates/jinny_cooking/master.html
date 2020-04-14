@@ -24,8 +24,9 @@
     <nav>
         <a href="/" class="nav-item logo"><img src="{% static 'jinny_cooking/img/Jinnytty.png' %}"></a>
         <div class="right">
-            <a href="/about" class="nav-item">About</a>
-            <a href="/viewall" class="nav-item">Recipes</a>
+            {% for item in navigation.items.all %}
+            <a href="{{item.link}}" class="nav-item">{{item.title}}</a>
+            {% endfor %}
             <a href="#" class="nav-item last lang">
                 <span class="iconify flag" data-inline="false" data-icon="emojione:flag-for-us-outlying-islands"></span>
                 <span class="iconify expand" data-inline="false" data-icon="ant-design:caret-down-outlined"></span>
@@ -48,14 +49,14 @@
 
     <section class="footer">
         <div>
-            <a href="/about">About</a>
-            <a href="/recipes">Recipes</a>
+            {% for item in navigation.items.all %}
+                <a href="{{item.link}}">{{item.title}}</a>
+            {% endfor %}
         </div>
         <div>
-            <a href="https://www.twitch.tv/jinnytty" target="_blank"><span class="iconify" data-inline="false" data-icon="cib:twitch"></span></a>
-            <a href="https://www.instagram.com/yyj0728/" target="_blank"><span class="iconify" data-inline="false" data-icon="fa:instagram"></span></a>
-            <a href="https://www.youtube.com/yoomjji" target="_blank"><span class="iconify" data-inline="false" data-icon="cib:youtube"></span></a>
-            <a href="https://discordapp.com/invite/XtdbP2x" target="_blank"><span class="iconify" data-inline="false" data-icon="cib:discord"></span></a>
+            {% for item in socials %}
+            <a href="{{item.link}}" target="_blank"><span class="iconify" data-inline="false" data-icon="cib:{{item.type}}"></span></a>
+            {% endfor %}
         </div>
         <a href="https://nikcio.com/" target="_blank" class="copyright">© Nikcio 2020</a>
         <div class="bottom-banner"></div>

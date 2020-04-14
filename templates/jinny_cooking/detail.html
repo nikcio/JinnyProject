@@ -11,10 +11,9 @@
 
 {% block content %}
     <section class="detail">
-        <h1>Milk Steak</h1>
-        <span>Date: 2020-02-02</span>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam condimentum eros sit amet nibh sollicitudin, eu posuere tellus mattis. Donec sed tellus scelerisque, lacinia turpis vel, efficitur nulla. Mauris vel felis ornare tortor sollicitudin maximus vitae eget sapien. Nulla ac consequat mauris. Quisque interdum imperdiet eros, vel feugiat mauris venenatis ut. Aenean egestas elit id malesuada suscipit. Fusce molestie, mi eget porta cursus, leo massa dignissim mi, nec placerat nulla enim vel lorem. Etiam a lacus ac nulla laoreet mattis. Praesent imperdiet venenatis ornare.</p>
-        <p>Nulla non finibus tellus, et eleifend elit. Donec ullamcorper molestie ex et vestibulum. Vestibulum lobortis, mi eget interdum mattis, ligula orci pellentesque tortor, a aliquet massa enim vel arcu. Sed semper scelerisque nibh, et bibendum neque commodo a. Pellentesque eu ipsum id purus elementum interdum. Nulla commodo tellus sem, sit amet fermentum purus pellentesque ac. Sed tincidunt nunc sed egestas ultricies. Ut vel tristique velit. Nullam tincidunt elit et lectus efficitur, in sodales nisi scelerisque. Sed malesuada rutrum felis tempus dapibus. Vivamus ac gravida risus. Mauris vitae placerat ligula.</p>
-        <img src="{% static 'jinny_cooking/img/pic.png' %}">
+        <h1>{{object.title}}</h1>
+        <span>{{object.date}}</span>
+        <p>{{object.description}}</p>
+        <img src="/{{object.image}}">
     </section>
 {% endblock %}

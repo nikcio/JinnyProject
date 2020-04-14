@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, DetailView
 from cooking import models
 
 
@@ -9,15 +9,32 @@ class Index(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['recipes'] = models.Recipe.objects.all().order_by("-date")[:9]
+        context['frontpage'] = models.Frontpage.objects.all()[0]
+        context['navigation'] = models.Navigation.objects.all()[0]
+        context['socials'] = models.Social.objects.all()
         return context
 
 
 class About(TemplateView):
     template_name = "jinny_cooking/about.html"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['about'] = models.About.objects.all()[0]
+        context['navigation'] = models.Navigation.objects.all()[0]
+        context['socials'] = models.Social.objects.all()
+        return context
 
-class Detail(TemplateView):
+
+class Detail(DetailView):
     template_name = "jinny_cooking/detail.html"
+    model = models.Recipe
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['navigation'] = models.Navigation.objects.all()[0]
+        context['socials'] = models.Social.objects.all()
+        return context
 
 
 class ViewAll(TemplateView):
@@ -26,4 +43,8 @@ class ViewAll(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['recipes'] = models.Recipe.objects.all().order_by("-date")
+        context['viewall'] = models.ViewAll.objects.all()[0]
+        context['navigation'] = models.Navigation.objects.all()[0]
+        context['socials'] = models.Social.objects.all()
+        return context
 

@@ -35,3 +35,61 @@ class Recipe(models.Model):
 @receiver(post_delete, sender=Recipe)
 def delete_recipe_image(sender, instance, **kwargs):
     instance.image.delete(False)
+
+
+class About(models.Model):
+    title = models.CharField(max_length=255, null=True)
+    description = models.TextField(null=True)
+
+    def __str__(self):
+        return "About"
+
+
+class Frontpage(models.Model):
+    title = models.CharField(max_length=255, null=True)
+    subtitle = models.CharField(max_length=255, null=True)
+    recipe_title = models.CharField(max_length=255, null=True)
+    button_title = models.CharField(max_length=255, null=True)
+
+    def __str__(self):
+        return "Frontpage"
+
+
+class ViewAll(models.Model):
+    title = models.CharField(max_length=255, null=True)
+
+    def __str__(self):
+        return "Recipes"
+
+
+class NavItem(models.Model):
+    title = models.CharField(max_length=255, null=True)
+    link = models.CharField(max_length=255, null=True)
+
+    def __str__(self):
+        return self.title
+
+
+class Social(models.Model):
+    SOCIALS = [
+        ('linkedin', "LinkedIn"),
+        ('youtube', "Youtube"),
+        ('instagram', "Instagram"),
+        ('discord', "Discord"),
+        ('twitch', "Twitch"),
+        ('twitter', "Twitter"),
+        ('facebook', "Facebook"),
+    ]
+
+    type = models.CharField(max_length=255, null=True, unique=True, choices=SOCIALS)
+    link = models.URLField(max_length=1084, null=True)
+
+    def __str__(self):
+        return self.type.capitalize()
+
+
+class Navigation(models.Model):
+    items = models.ManyToManyField(NavItem)
+
+    def __str__(self):
+        return "Navigation"

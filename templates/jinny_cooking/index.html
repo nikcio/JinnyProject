@@ -8,8 +8,8 @@
 {% block header %}
     <section class="top">
         <div class="title">
-            <h1>Find new and exciting recipes</h1>
-            <h2>Disclaimer: Everything beyond this point is at your own risk</h2>
+            <h1>{{frontpage.title}}</h1>
+            <h2>{{frontpage.subtitle}}</h2>
             <a href="#scroll-section"><span class="iconify down" data-inline="false" data-icon="bx:bx-chevron-down" style="font-size: 88px;"></span></a>
         </div>
         <div class="poly">
@@ -21,7 +21,7 @@
 
 {% block content %}
     <section class="middle" id="#scroll-section">
-        <h3>Recipes</h3>
+        <h3>{{frontpage.recipe_title}}</h3>
         <div class="collcetion">
             <div class="row">
                 {% for recipe in recipes %}
@@ -32,8 +32,8 @@
                 {% endfor %}
             </div>
         </div>
-        <a href="/viewall" class="viewall">
-           View all recipes
+        <a href="/recipes" class="viewall">
+            {{frontpage.button_title}}
             <span class="iconify icon" data-inline="false" data-icon="ic:outline-arrow-right-alt"></span>
         </a>
     </section>

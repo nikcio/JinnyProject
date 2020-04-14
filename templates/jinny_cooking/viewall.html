@@ -11,21 +11,15 @@
 
 {% block content %}
     <section class="viewall">
-        <h1>Recipes</h1>
+        <h1>{{viewall.title}}</h1>
         <div class="collcetion">
             <div class="row">
-                <a class="item" href="#">
-                    <img src="{% static 'jinny_cooking/img/pic.png' %}">
-                    <span>Milk steak</span>
+                {% for recipe in recipes %}
+                <a class="item" href="{{recipe.get_absolute_url}}">
+                    <img src="/{{recipe.image}}">
+                    <span>{{recipe.title}}</span>
                 </a>
-                <a class="item" href="#">
-                    <img src="{% static 'jinny_cooking/img/pic.png' %}">
-                    <span>Milk steak</span>
-                </a>
-                <a class="item" href="#">
-                    <img src="{% static 'jinny_cooking/img/pic.png' %}">
-                    <span>Milk steak</span>
-                </a>
+                {% endfor %}
             </div>
         </div>
     </section>
