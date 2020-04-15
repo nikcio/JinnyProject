@@ -23,9 +23,10 @@ class Recipe(models.Model):
     description = models.TextField(verbose_name="Description", null=True)
     image = models.ImageField(upload_to=get_recipe_image, verbose_name="Image", null=True)
     slug = models.SlugField(null=True)
+    published = models.BooleanField(null=True, default=False)
 
     def __str__(self):
-        return self.title
+        return self.title + (" - Published" if self.published else " - Unpublished")
     
     def get_absolute_url(self):
         return reverse('recipe-detail', kwargs={'slug': self.slug})
