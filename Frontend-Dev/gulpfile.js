@@ -155,7 +155,7 @@ function sassFormat() {
 function JSFormat() {
 	return gulp.src(config.js)
 		.pipe(concat('combined.js'))
-		.pipe(gulpif(config.settings.isBuild, uglify()))
+		//.pipe(gulpif(config.settings.isBuild, uglify()))
 		.pipe(gulp.dest(config.distJS))
 };
 
