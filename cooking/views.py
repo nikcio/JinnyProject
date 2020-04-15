@@ -8,7 +8,7 @@ class Index(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['recipes'] = models.Recipe.objects.all().order_by("-date")[:9]
+        context['recipes'] = models.Recipe.objects.filter(published=True).order_by("-date")[:9]
         context['frontpage'] = models.Frontpage.objects.all()[0]
         context['navigation'] = models.Navigation.objects.all()[0]
         context['socials'] = models.Social.objects.all()
@@ -42,7 +42,7 @@ class ViewAll(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['recipes'] = models.Recipe.objects.all().order_by("-date")
+        context['recipes'] = models.Recipe.objects.filter(published=True).order_by("-date")
         context['viewall'] = models.ViewAll.objects.all()[0]
         context['navigation'] = models.Navigation.objects.all()[0]
         context['socials'] = models.Social.objects.all()
