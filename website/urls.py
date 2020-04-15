@@ -23,4 +23,7 @@ urlpatterns = [
     path('about/', view.About.as_view()),
     path('recipes/', view.ViewAll.as_view()),
     path('recipe/<slug:slug>', view.Detail.as_view(), name="recipe-detail"),
+    path('add/', view.add_recipe),
+    path('author/', view.add_author),
+    path('userlogin/', view.ViewAll.as_view())
 ]

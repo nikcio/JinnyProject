@@ -1,0 +1,13 @@
+<DOCTYPE html>
+<html>
+<head>
+<title>edit</title>
+</head>
+<h1> Add Recipe </h1>
+<form enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit" class="">Submit</button>
+</form>
+</body>
+</html>

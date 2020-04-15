@@ -2,10 +2,13 @@ from django.db import models
 from django.db.models.signals import post_delete
 from django.dispatch import receiver
 from django.urls import reverse
+from django.utils.text import slugify
 
 
 class Author(models.Model):
     name = models.CharField(max_length=255, null=True)
+    active = models.BooleanField(null=True)
+    date = models.DateField(auto_now=True, null=True)
 
     def __str__(self):
         return self.name
@@ -21,12 +24,16 @@ class Recipe(models.Model):
     author = models.ForeignKey(Author, verbose_name="Author", on_delete=models.CASCADE, null=True)
     video = models.URLField(verbose_name="Video", max_length=1084, null=True, blank=True)
     description = models.TextField(verbose_name="Description", null=True)
-    image = models.ImageField(upload_to=get_recipe_image, verbose_name="Image", null=True)
-    slug = models.SlugField(null=True)
+    image = models.ImageField(upload_to=get_recipe_image, verbose_name="Image", null=True, blank=True)
+    slug = models.SlugField(null=True, blank=True)
     published = models.BooleanField(null=True, default=False)
 
     def __str__(self):
-        return self.title + (" - Published" if self.published else " - Unpublished")
+        return self.title
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        super(Recipe, self).save(*args, **kwargs)
     
     def get_absolute_url(self):
         return reverse('recipe-detail', kwargs={'slug': self.slug})
