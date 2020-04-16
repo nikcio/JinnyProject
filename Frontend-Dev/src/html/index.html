@@ -24,6 +24,8 @@
     <nav>
         <a href="/" class="nav-item logo"><img src="img/Jinnytty.png"></a>
         <div class="right">
+            <span onclick="showMenu()" class="iconify toggle" data-inline="false" data-icon="ion:menu"></span>
+            <span onclick="closeMenu()" class="iconify close" data-inline="false" data-icon="ic:sharp-close"></span>
             <a href="/about.html" class="nav-item">About</a>
             <a href="/viewall.html" class="nav-item">Recipes</a>
             <a href="#" class="nav-item last lang">
@@ -80,7 +82,7 @@
     </section>
 
     <section class="footer">
-        <div>
+        <div class="nav-items">
             <a href="#">About</a>
             <a href="#">Recipes</a>
         </div>
@@ -96,6 +98,7 @@
 
     <!-- inject:js -->
     <!-- endinject -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
 </body>
 </html>
