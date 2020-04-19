@@ -1,6 +1,7 @@
 section.detail{
     width: 60%;
     margin: 0 auto;
+    margin-bottom: 50px;
 
     img{
         width: 300px;
@@ -55,6 +56,25 @@ section.detail{
         font-size: 24px;
         line-height: 180%;
         color: #000000;
+    }
+
+    a.watch-video{
+        color: #ffffff;
+        background-color: #9147FF;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        align-items: center;
+        text-align: center;
+        padding: 15px;
+        display: block;
+        width: 60%;
+        margin: 20px auto;
+    }
+
+    a.watch-video:hover{
+        background-color: #772ce8;
     }
 }
 

@@ -6,6 +6,13 @@ img{
     object-fit: cover;
 }
 
+body{
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
 @import 'live-now.scss';
 @import 'nav.scss';
 @import 'footer.scss';

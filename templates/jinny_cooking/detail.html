@@ -13,6 +13,9 @@
     <section class="detail">
         <h1>{{object.title}}</h1>
         <span>{{object.date}}</span>
+        {% if object.video != null %}
+        <a href="{{object.video}}" target="_blank" class="watch-video">Watch video</a>
+        {% endif %}
         <p>{{object.description}}</p>
         <img src="/{{object.image}}">
     </section>
