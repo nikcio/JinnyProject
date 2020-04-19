@@ -266,3 +266,8 @@ fabric.properties
 .history
 
 # End of https://www.gitignore.io/api/django,python,pycharm,visualstudiocode
+
+#My own
+/staticFiles/jinny_cooking/img/recipes/
+/static/jinny_cooking/img/recipes/
+./media/
