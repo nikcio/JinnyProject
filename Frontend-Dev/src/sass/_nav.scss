@@ -72,13 +72,39 @@ nav {
     }
 
     .right.show{
-        background: linear-gradient(90deg, #0000003f 60%, #ffffff 60%);
+        background: rgba(0, 0, 0, 0.6);
         z-index: 1000;
         position: fixed;
-        top: -15px;
+        width: 100%;
+        height: 100%;
         left: 0;
-        right: 0;
-        height: 110vh;
+        top: 0;
+        @keyframes animateIn{
+            from{
+                opacity:0
+            } 
+            to{
+                opacity:1
+            }
+        }
+        animation: animateIn .4s;
+
+        .menu-container{
+            @keyframes animateRight {
+                from{
+                    right: -100vw;
+                }
+                to{
+                    right: 0;
+                }
+            }
+            animation: animateRight .1s;
+            background-color: #ffffff;
+            height: 100%;
+            position: fixed;
+            width: 50%;
+            right: 0;
+        }
 
 
         .iconify.close{
@@ -86,14 +112,14 @@ nav {
             display: block;
             float: right;
             color: rgb(0, 0, 0);
-            margin: 30px 20px 0 10px;
+            margin: 20px 20px 0 10px;
         }
 
         a.nav-item{
             display: block;
             margin: 30px auto;
             margin-right: 0;
-            width: 40%;
+            width: 100%;
             font-size: 32px;
         }
 
@@ -159,10 +185,8 @@ nav {
         }
 
         .right.show{
-            background: linear-gradient(90deg, #0000003f 20%, #ffffff 20%);
-
-            a.nav-item{
-                width: 80%;
+            .menu-container{
+                width: 90%;
             }
         }
     }

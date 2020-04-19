@@ -1,10 +1,25 @@
+document.addEventListener('DOMContentLoaded', function(){
+    rightMenu = $(".right");
+    menu = $(".menu-container");
+    body = $("body")
+    openButton = $(".iconify.toggle");
+    closeButton = $(".iconify.close");
+});
+
 function showMenu(){
-   $(".right").addClass("show");
-   $("body").addClass("show-menu")
+   rightMenu.addClass("show");
+   body.addClass("show-menu");
 }
 
 
 function closeMenu(){
-    $(".right").removeClass("show");
-    $("body").removeClass("show-menu")
+    rightMenu.removeClass("show");
+    body.removeClass("show-menu");
 }
+
+window.addEventListener("click", function(event) {
+    if (event.target == rightMenu[0]) {
+        rightMenu.removeClass("show");
+        body.removeClass("show-menu");
+      }
+});
