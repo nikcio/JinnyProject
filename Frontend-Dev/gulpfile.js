@@ -15,7 +15,7 @@ const cleanCSS = require('gulp-clean-css');
 
 //Javascript processing
 const concat = require('gulp-concat');
-const uglify = require('gulp-uglify');
+const uglify = require('gulp-uglify-es').default;
 
 //Image processing
 const imagemin = require('gulp-imagemin');
@@ -155,7 +155,7 @@ function sassFormat() {
 function JSFormat() {
 	return gulp.src(config.js)
 		.pipe(concat('combined.js'))
-		//.pipe(gulpif(config.settings.isBuild, uglify()))
+		.pipe(gulpif(config.settings.isBuild, uglify()))
 		.pipe(gulp.dest(config.distJS))
 };
 
