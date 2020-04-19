@@ -2,7 +2,6 @@ section.top{
     background: linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.7)), linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%), 
         url('../img/Frontpage-Background.png'), #FFFFFF;
     margin: 0;
-    margin-top: -80px;
     height: 100vh;
 
     div.title{
@@ -179,6 +178,9 @@ section.middle{
         display: inline-block;
         text-decoration: none;
         width: 33%;
+        min-width: 300px;
+        vertical-align: top;
+        
         img{
             display: block;
             width: 300px;
@@ -194,6 +196,7 @@ section.middle{
             line-height: 34px;
             color: #000000;
             margin: 20px 30px;
+            overflow-wrap: break-word;
         }
     }
 

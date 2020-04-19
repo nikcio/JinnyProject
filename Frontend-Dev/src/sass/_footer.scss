@@ -1,13 +1,9 @@
 section.footer{
     margin-top: auto;
-    
 
     div{
         margin: 10px auto;
-        width: 15vw;
         text-align: center;
-        display: flex;
-        flex-direction: row;
         
 
         a{
@@ -18,8 +14,7 @@ section.footer{
             line-height: 23px;
             align-items: center;
             text-align: center;
-            flex:1 1 auto;
-            margin: 10px 0;
+            margin: .75rem;
             color: #000000;
         }
 
@@ -27,6 +22,10 @@ section.footer{
             flex:1 1 auto;
             font-size: 30px;
         }
+    }
+
+    div.nav-items{
+        margin: 20px auto;
     }
 
     a{
@@ -52,7 +51,6 @@ section.footer{
 @media only screen and (max-width: 600px){
     section.footer{
         div{
-            width: 250px;
             
             a{
                 font-size: 20px;
@@ -78,7 +76,6 @@ section.footer{
 @media only screen and (min-width: 600px){
     section.footer{
         div{
-            width: 250px;
             a{
                 font-size: 26px;
             }
@@ -95,10 +92,7 @@ section.footer{
     
         div{
             margin: 10px auto;
-            width: 15vw;
             text-align: center;
-            display: flex;
-            flex-direction: row;
             
     
             a{
@@ -109,8 +103,6 @@ section.footer{
                 line-height: 23px;
                 align-items: center;
                 text-align: center;
-                flex:1 1 auto;
-                margin: 10px 0;
                 color: #000000;
             }
     
