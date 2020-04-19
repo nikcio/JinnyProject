@@ -26,7 +26,7 @@
             <div class="row">
                 {% for recipe in recipes %}
                 <a class="item" href="{{recipe.get_absolute_url}}">
-                    <img src="/{{recipe.image}}">
+                    <img src="/{{recipe.image.url}}">
                     <span>{{recipe.title}}</span>
                 </a>
                 {% endfor %}
