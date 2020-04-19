@@ -270,3 +270,4 @@ fabric.properties
 #My own
 /staticFiles/jinny_cooking/img/recipes/
 /static/jinny_cooking/img/recipes/
+./media/
