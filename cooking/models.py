@@ -15,7 +15,7 @@ class Author(models.Model):
 
 
 def get_recipe_image(instance, filename):
-    return '/jinny_cooking/img/recipes/{0}/{1}'.format(instance.title, filename)
+    return 'media/jinny_cooking/img/recipes/{0}/{1}'.format(instance.title, filename)
 
 
 class Recipe(models.Model):
