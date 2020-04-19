@@ -2,6 +2,8 @@ section.top{
     background: linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.7)), linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%), 
         url('../img/Frontpage-Background.png'), #FFFFFF;
     margin: 0;
+    margin-top: -100px;
+    padding-top: 100px;
     height: 100vh;
 
     div.title{
@@ -180,7 +182,7 @@ section.middle{
         width: 33%;
         min-width: 300px;
         vertical-align: top;
-        
+
         img{
             display: block;
             width: 300px;
