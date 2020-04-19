@@ -1,8 +1,17 @@
 from django.contrib import admin
 from cooking import models
 
-admin.site.register(models.Author)
-admin.site.register(models.Recipe)
+
+class RecipeAdmin(admin.ModelAdmin):
+    list_display = ('title', 'published', 'date')
+
+
+class AuthorAdmin(admin.ModelAdmin):
+    list_display = ('name', 'active', 'date')
+
+
+admin.site.register(models.Author, AuthorAdmin)
+admin.site.register(models.Recipe, RecipeAdmin)
 admin.site.register(models.About)
 admin.site.register(models.Frontpage)
 admin.site.register(models.NavItem)
