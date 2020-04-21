@@ -1,8 +1,58 @@
-from django.urls import path
-from cooking import views as view
+from django.urls import path, include
+from cooking import models
+from django.contrib.auth import views as auth_views
+from user_management import views as view
 
 urlpatterns = [
-    path('add/', view.add_recipe),
-    path('author/', view.add_author),
-    path('login/', view.ViewAll.as_view())
+    path('login/',
+         auth_views.LoginView.as_view(
+             extra_context={
+                 'navigation': models.Navigation.objects.all()[0],
+                 'socials': models.Social.objects.all()
+             })),
+    path('logout/',
+         auth_views.LogoutView.as_view(
+             extra_context={
+                 'navigation': models.Navigation.objects.all()[0],
+                 'socials': models.Social.objects.all()
+             })),
+    path('password_change/',
+         auth_views.PasswordChangeView.as_view(
+             extra_context={
+                 'navigation': models.Navigation.objects.all()[0],
+                 'socials': models.Social.objects.all()
+             })),
+    path('password_change/done/',
+         auth_views.PasswordChangeDoneView.as_view(
+             extra_context={
+                 'navigation': models.Navigation.objects.all()[0],
+                 'socials': models.Social.objects.all()
+             })),
+    path('password_reset/',
+         auth_views.PasswordResetView.as_view(
+             extra_context={
+                 'navigation': models.Navigation.objects.all()[0],
+                 'socials': models.Social.objects.all()
+             })),
+    path('password_reset/done/',
+         auth_views.PasswordResetDoneView.as_view(
+             extra_context={'navigation': models.Navigation.objects.all()[0],
+                            'socials': models.Social.objects.all()
+                            })),
+    path('reset/<uidb64>/<token>/',
+         auth_views.PasswordResetConfirmView.as_view(
+             extra_context={
+                 'navigation': models.Navigation.objects.all()[0],
+                 'socials': models.Social.objects.all()
+             })),
+    path('reset/done/',
+         auth_views.PasswordResetCompleteView.as_view(
+             extra_context={
+                 'navigation': models.Navigation.objects.all()[0],
+                 'socials': models.Social.objects.all()
+             })),
+    path('', include('django.contrib.auth.urls')),
+    path('signup/', view.Signup.as_view(), name='signup'),
+    path('dashboard/', view.Dashboard.as_view()),
+    path('add/recipe/', view.AddRecipe.as_view())
 ]

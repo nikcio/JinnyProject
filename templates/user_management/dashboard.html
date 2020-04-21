@@ -1,0 +1,14 @@
+{% extends 'jinny_cooking/master.html'%}
+{% block content %}
+
+<li>
+    {% for item in allRecipes %}
+        {% if item.author == user %}
+        <ul>
+            {{item.title}}
+        </ul>
+        {% endif %}
+    {% endfor %}
+</li>
+
+{% endblock %}
