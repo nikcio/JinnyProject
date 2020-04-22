@@ -42,7 +42,9 @@ const pagesToInject = [
 	"html/index.html",
 	"html/viewall.html",
 	"html/about.html",
-	"html/detail.html"
+	"html/detail.html",
+	"html/login.html",
+	"html/add_recipe.html"
 ];
 
 const basePages = [];
