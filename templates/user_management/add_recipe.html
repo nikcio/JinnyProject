@@ -1,6 +1,9 @@
 {% extends 'jinny_cooking/master.html' %}
 
 {% block content %}
+
+<p><a href="/accounts/dashboard/">Go Back</a></p>
+
 <h1> Add Recipe </h1>
 <form enctype="multipart/form-data" method="post">
     {% csrf_token %}

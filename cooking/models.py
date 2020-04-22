@@ -23,9 +23,9 @@ class Recipe(models.Model):
     title = models.CharField(max_length=255, null=True, verbose_name="Title", unique=True)
     date = models.DateField(auto_now=True, null=True, verbose_name="Date")
     author = models.ForeignKey(User, verbose_name="Author", on_delete=models.SET_NULL, null=True, blank=True)
-    video = models.URLField(verbose_name="Video", max_length=1084, null=True, blank=True)
+    video = models.URLField(verbose_name="Video(optional)", max_length=1084, null=True, blank=True)
     description = models.TextField(verbose_name="Description", null=True)
-    image = models.ImageField(upload_to=get_recipe_image, verbose_name="Image", null=True, blank=True)
+    image = models.ImageField(upload_to=get_recipe_image, verbose_name="Cover image", null=True)
     slug = models.SlugField(null=True, blank=True)
     published = models.BooleanField(null=True, default=False)
 

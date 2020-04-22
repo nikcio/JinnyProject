@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ["jinnytty.com", "www.jinnytty.com", "localhost", "127.0.0.1"]
 INSTALLED_APPS = [
     'mainsite.apps.MainsiteConfig',
     'cooking.apps.CookingConfig',
+    'user_management',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
