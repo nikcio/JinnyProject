@@ -1,13 +1,21 @@
-{% extends 'jinny_cooking/master.html' %}
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'user_management/addrecipe.css' %}">
+{% endblock %}
 
 {% block content %}
-
-<p><a href="/accounts/dashboard/">Go Back</a></p>
-
-<h1> Add Recipe </h1>
-<form enctype="multipart/form-data" method="post">
-    {% csrf_token %}
-    {{ form }}
-    <button type="submit" class="">Submit</button>
-</form>
+<section class="add-recipe">
+    <h1>Add Recipe</h1>
+    <div>
+        <span class="iconify" data-inline="false" data-icon="bi:arrow-left-short"></span>
+        <a href="/accounts/dashboard/" class="go-back">Go Back</a>
+    </div>
+    <form enctype="multipart/form-data" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit" class="">Submit</button>
+    </form>
+</section>
 {% endblock %}

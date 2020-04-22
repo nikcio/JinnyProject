@@ -1,7 +1,12 @@
-{% extends "jinny_cooking/master.html" %}
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'user_management/loginpage.css' %}">
+{% endblock %}
 
 {% block content %}
-
+<section class="login">
   {% if form.errors %}
     <p>Your username and password didn't match. Please try again.</p>
   {% endif %}
@@ -32,8 +37,6 @@
   </form>
 
   <p><a href="/accounts/signup/">Signup</a></p>
-
-<!--  {# Assumes you setup the password_reset view in your URLconf #}-->
-<!--  <p><a href="{% url 'password_reset' %}">Lost password?</a></p>-->
-  
+  <p id="reset"><a href="{% url 'password_reset' %}">Lost password?</a></p>
+</section>
 {% endblock %}

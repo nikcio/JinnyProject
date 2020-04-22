@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- This web site is created and maintained by Nikcio -->
+    <!-- Contact: devnikcio@gmail.com -->
+    <!-- © Nikcio 2020 -->
+    <meta charset="UTF-8">
+    <title>Cooking with Jinny</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static '/jinny_cooking/fav/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static '/jinny_cooking/fav/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static '/jinny_cooking/fav/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static '/jinny_cooking/fav/site.webmanifest' %}">
+    <link rel="mask-icon" href="{% static '/jinny_cooking/fav/safari-pinned-tab.svg' %}" color="#5bbad5">
+    <link rel="shortcut icon" href="{% static '/jinny_cooking/fav/favicon.ico' %}">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="{% static '/jinny_cooking/fav/browserconfig.xml' %}">
+    <meta name="theme-color" content="#ffffff">
+    <!-- inject:css -->
+    <!-- endinject -->
+</head>
+<body>
+    <nav>
+        <a href="/" class="nav-item logo"><img src="img/Jinnytty.png"></a>
+        <div class="right">
+            <div class="menu-container">
+                <span onclick="showMenu()" class="iconify toggle" data-inline="false" data-icon="ion:menu"></span>
+                <span onclick="closeMenu()" class="iconify close" data-inline="false" data-icon="ic:sharp-close"></span>
+                <a href="/about.html" class="nav-item">About</a>
+                <a href="/viewall.html" class="nav-item">Recipes</a>
+                <a href="#" class="nav-item last lang">
+                    <span class="iconify flag" data-inline="false" data-icon="emojione:flag-for-us-outlying-islands"></span>
+                    <span class="iconify expand" data-inline="false" data-icon="ant-design:caret-down-outlined"></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="add-recipe">
+        <h1>Add Recipe</h1>
+        <div>
+            <span class="iconify" data-inline="false" data-icon="bi:arrow-left-short"></span>
+            <a href="/accounts/dashboard/" class="go-back">Go Back</a>
+        </div>
+        <form enctype="multipart/form-data" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="dNrAmOIammeY4d6kR43o6ZHnwoxWxyoVAdvS4uNKsgsXn3gYf8v5Lfvn5XJRKmZo">
+            <label for="id_title">Title:</label><input type="text" name="title" maxlength="255" required="" id="id_title">
+        <label for="id_video">Video(optional):</label><input type="url" name="video" maxlength="1084" id="id_video">
+        <label for="id_description">Description:</label><textarea name="description" cols="40" rows="10" required="" id="id_description"></textarea>
+        <label for="id_image">Cover image:</label><input type="file" name="image" accept="image/*" required="" id="id_image">
+            <button type="submit" class="">Submit</button>
+        </form>
+    </section>
+
+    <section class="footer">
+        <div class="nav-items">
+            <a href="#">About</a>
+            <a href="#">Recipes</a>
+        </div>
+        <div>
+            <a href="#" target="_blank"><span class="iconify" data-inline="false" data-icon="cib:twitch"></span></a>
+            <a href="#" target="_blank"><span class="iconify" data-inline="false" data-icon="fa:instagram"></span></a>
+            <a href="#" target="_blank"><span class="iconify" data-inline="false" data-icon="cib:youtube"></span></a>
+            <a href="#" target="_blank"><span class="iconify" data-inline="false" data-icon="cib:discord"></span></a>
+        </div>
+        <a href="#" target="_blank" class="copyright">© Nikcio 2020</a>
+        <div class="bottom-banner"></div>
+    </section>
+
+    <!-- inject:js -->
+    <!-- endinject -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
+</body>
+</html>
