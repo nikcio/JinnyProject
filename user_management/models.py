@@ -7,5 +7,6 @@ from django.contrib.auth.models import Group
 
 @receiver(post_save, sender=User)
 def add_standard_permission(sender, instance, created, **kwargs):
-    standard_group = Group.objects.get(name='contributors')
-    standard_group.user_set.add(instance)
+    if Group.objects.get(name='contributors').count():
+        standard_group = Group.objects.get(name='contributors')
+        standard_group.user_set.add(instance)
