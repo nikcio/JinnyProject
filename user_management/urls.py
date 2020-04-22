@@ -9,7 +9,8 @@ urlpatterns = [
              extra_context={
                  'navigation': models.Navigation.objects.all()[0],
                  'socials': models.Social.objects.all()
-             })),
+             },
+             redirect_authenticated_user=True)),
     path('logout/',
          auth_views.LogoutView.as_view(
              extra_context={
