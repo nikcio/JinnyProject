@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ["jinnytty.com", "www.jinnytty.com", "localhost", "127.0.0.1"]
 INSTALLED_APPS = [
     'mainsite.apps.MainsiteConfig',
     'cooking.apps.CookingConfig',
+    'user_management',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -135,4 +136,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 MEDIA_URL = '/media/'
 
+#User login section
+
 LOGIN_URL = 'accounts/login/'
+
+LOGIN_REDIRECT_URL = '/accounts/dashboard'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

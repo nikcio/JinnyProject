@@ -10,7 +10,7 @@ class AuthorAdmin(admin.ModelAdmin):
     list_display = ('name', 'active', 'date')
 
 
-admin.site.register(models.Author, AuthorAdmin)
+# admin.site.register(models.Author, AuthorAdmin)
 admin.site.register(models.Recipe, RecipeAdmin)
 admin.site.register(models.About)
 admin.site.register(models.Frontpage)
