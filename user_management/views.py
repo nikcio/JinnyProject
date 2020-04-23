@@ -7,6 +7,7 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.shortcuts import render, redirect
+from website.version import v
 
 
 class AddRecipe(LoginRequiredMixin, PermissionRequiredMixin, FormView):
@@ -26,6 +27,7 @@ class AddRecipe(LoginRequiredMixin, PermissionRequiredMixin, FormView):
         context = super().get_context_data(**kwargs)
         context['navigation'] = models.Navigation.objects.all()[0]
         context['socials'] = models.Social.objects.all()
+        context['version'] = v
         return context
 
 
@@ -37,6 +39,7 @@ class Dashboard(LoginRequiredMixin, TemplateView):
         context['navigation'] = models.Navigation.objects.all()[0]
         context['socials'] = models.Social.objects.all()
         context['allRecipes'] = models.Recipe.objects.all()
+        context['version'] = v
         return context
 
 
@@ -57,4 +60,5 @@ class Signup(FormView):
         context = super().get_context_data(**kwargs)
         context['navigation'] = models.Navigation.objects.all()[0]
         context['socials'] = models.Social.objects.all()
+        context['version'] = v
         return context

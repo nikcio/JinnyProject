@@ -1,5 +1,6 @@
 from django.views.generic import TemplateView, DetailView
 from cooking import models
+from website.version import v
 
 
 class Index(TemplateView):
@@ -11,6 +12,7 @@ class Index(TemplateView):
         context['frontpage'] = models.Frontpage.objects.all()[0]
         context['navigation'] = models.Navigation.objects.all()[0]
         context['socials'] = models.Social.objects.all()
+        context['version'] = v
         return context
 
 
@@ -22,6 +24,7 @@ class About(TemplateView):
         context['about'] = models.About.objects.all()[0]
         context['navigation'] = models.Navigation.objects.all()[0]
         context['socials'] = models.Social.objects.all()
+        context['version'] = v
         return context
 
 
@@ -33,6 +36,7 @@ class Detail(DetailView):
         context = super().get_context_data(**kwargs)
         context['navigation'] = models.Navigation.objects.all()[0]
         context['socials'] = models.Social.objects.all()
+        context['version'] = v
         return context
 
 
@@ -45,4 +49,5 @@ class ViewAll(TemplateView):
         context['viewall'] = models.ViewAll.objects.all()[0]
         context['navigation'] = models.Navigation.objects.all()[0]
         context['socials'] = models.Social.objects.all()
+        context['version'] = v
         return context
