@@ -123,11 +123,12 @@ function injectToHTML() {
 	let sources = [
 		config.injectSourceCSS, config.injectSourceJS
 	];
-
+	const d = "?" + Date.now();
 	return gulp.src(basePages)
 		.pipe(inject(gulp.src(sources, {read: false}), {
 			addRootSlash: false,
-			ignorePath: config.dist
+			ignorePath: config.dist,
+			addSuffix: d
 		}))
 		.pipe(fileInclude().on('error', function() {
 			console.log(arguments);

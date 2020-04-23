@@ -143,3 +143,52 @@ LOGIN_URL = 'accounts/login/'
 LOGIN_REDIRECT_URL = '/accounts/dashboard'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+#Security
+
+# SECURE_SSL_REDIRECT = True
+#
+# SECURE_HSTS_SECONDS = False
+#
+# SESSION_COOKIE_SECURE = True
+#
+# CSRF_COOKIE_SECURE = True
+#
+# SECURE_REFERRER_POLICY = 'no-referrer-when-downgrade'
+#
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+#
+# SECURE_HSTS_PRELOAD = True
+
+#logging
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'formatters': {
+#         'verbose': {
+#             'format' : "[%(asctime)s] %(levelname)s [%(name)s:%(lineno)s] %(message)s",
+#             'datefmt' : "%d/%b/%Y %H:%M:%S"
+#         },
+#         'simple': {
+#             'format': '%(levelname)s %(message)s'
+#         },
+#     },
+#     'handlers': {
+#         'file': {
+#             'level': 'DEBUG',
+#             'class': 'logging.FileHandler',
+#             'filename': 'mysite.log',
+#             'formatter': 'verbose'
+#         },
+#     },
+#     'loggers': {
+#         'django': {
+#             'handlers':['file'],
+#             'propagate': True,
+#             'level':'DEBUG',
+#         },
+#         'Cooking': {
+#             'handlers': ['file'],
+#             'level': 'DEBUG',
+#         },
+#     }

@@ -19,7 +19,7 @@
     <meta name="msapplication-config" content="{% static '/jinny_cooking/fav/browserconfig.xml' %}">
     <meta name="theme-color" content="#ffffff">
     <!-- inject:css -->
-    <link rel="stylesheet" href="{% static 'jinny_cooking/css/Base.css' %}">
+    <link rel="stylesheet" href="{% static 'jinny_cooking/css/Base.css' %}{{version}}">
     {% block head %}{% endblock %}
     <!-- endinject -->
 </head>
@@ -63,7 +63,7 @@
     </section>
 
     <!-- inject:js -->
-    <script src="{% static 'jinny_cooking/js/combined.js' %}"></script>
+    <script src="{% static 'jinny_cooking/js/combined.js' %}"{{version}}></script>
     <!-- endinject -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
