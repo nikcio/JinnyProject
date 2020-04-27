@@ -44,7 +44,8 @@ const pagesToInject = [
 	"html/about.html",
 	"html/detail.html",
 	"html/login.html",
-	"html/add_recipe.html"
+	"html/add_recipe.html",
+	"html/dashboard.html"
 ];
 
 const basePages = [];
