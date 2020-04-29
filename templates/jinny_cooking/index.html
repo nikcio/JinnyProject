@@ -29,7 +29,7 @@
             <div class="row">
                 {% for recipe in recipes %}
                 <a class="item" href="{{recipe.get_absolute_url}}">
-                    <img src="{{recipe.image.url}}">
+                    <img data-src="{{recipe.image.url}}" class="lazyload">
                     <span>{{recipe.title}}</span>
                 </a>
                 {% endfor %}
