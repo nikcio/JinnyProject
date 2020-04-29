@@ -31,7 +31,7 @@
                     {% if recipe.author == user %}
                         <div class="col-xs-6 col-sm-6 col-md-4 item">
                             <div class="wrapper-image">
-                                <img src="{{recipe.image.url}}">
+                                <img data-src="{{recipe.image.url}}" class="lazyload">
                                 {% if perms.cooking.change_recipe %}
                                 <a href="{% url 'update-recipe' recipe.pk%}" class="viewall --sm --dark">Change</a>
                                 {% else %}
@@ -65,7 +65,7 @@
                     {% if recipe.author != user %}
                         <div class="col-xs-6 col-sm-6 col-md-4 item">
                             <div class="wrapper-image">
-                                <img src="{{recipe.image.url}}">
+                                <img data-src="{{recipe.image.url}}" class="lazyload">
                                 {% if perms.cooking.change_recipe %}
                                 <a href="{% url 'update-recipe' recipe.pk%}" class="viewall --sm --dark">Change</a>
                                 {% else %}
