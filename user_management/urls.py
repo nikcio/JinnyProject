@@ -1,5 +1,4 @@
 from django.urls import path, include
-from django.conf.urls import *
 from cooking import models
 from django.contrib.auth import views as auth_views
 from user_management import views as view
@@ -56,6 +55,5 @@ urlpatterns = [
     path('', include('django.contrib.auth.urls')),
     path('signup/', view.Signup.as_view(), name='signup'),
     path('dashboard/', view.Dashboard.as_view()),
-    path('add/recipe/', view.AddRecipe.as_view()),
-    url(r'^update/recipe/(?P<pk>[\w-]+)$', view.UpdateRecipe.as_view(), name='update-recipe')
+    path('add/recipe/', view.AddRecipe.as_view())
 ]

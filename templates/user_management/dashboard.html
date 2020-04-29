@@ -1,93 +1,23 @@
 {% extends 'base.html'%}
 {% load static %}
 
-{% block head %}
-    <link rel="stylesheet" href="{% static 'user_management/css/dashboard.css' %}{{version}}">
-    <link rel="stylesheet" href="{% static 'jinny_cooking/css/frontpage.css' %}{{version}}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-grid-only@1.0.0/bootstrap.min.css">
-{% endblock %}
-
 {% block content %}
 
 {% if perms.cooking %}
-<section class="middle dashboard">
-    <section class="wrapper-actions">
-        <a href="{% url 'logout' %}" class="viewall --sm">
-           Logout
-        </a>
-        {% if perms.cooking.add_recipe %}
-        <a href="/accounts/add/recipe/" class="viewall --sm --dark">
-            Add recipe
-        </a>
-        {% endif %}
-    </section>
-    <section class="wrapper-content">
-        <div class="wrapper-submissions  col-12 col-xs-6">
-            <div class="title">
-                Your submissions
-            </div>
-            <div class="row">
-                {% for recipe in allRecipes %}
-                    {% if recipe.author == user %}
-                        <div class="col-xs-6 col-sm-6 col-md-4 item">
-                            <div class="wrapper-image">
-                                <img src="{{recipe.image.url}}">
-                                {% if perms.cooking.change_recipe %}
-                                <a href="{% url 'update-recipe' recipe.pk%}" class="viewall --sm --dark">Change</a>
-                                {% else %}
-                                <a href="recipe.get_absolute_url" class="viewall --sm --dark">View</a>
-                                {% endif %}
-                            </div>
-                            <div class="wrapper-status">
-                                {% if recipe.published %}
-                                <span class="status">Published</span>
-                                <span class="iconify dot" data-inline="false" data-icon="entypo:dot-single"></span>
-                                {% else %}
-                                <span class="status">Not Published</span>
-                                <span class="iconify dot" data-inline="false" data-icon="entypo:dot-single" style="color:Red"></span>
-                                {% endif %}
-                            </div>
-                            <div class="item-title">{{recipe.title}}</div>
-                        </div>
-                    {% endif %}
-                {% endfor %}
-            </div>
-        </div>
-        <div class="separator">
-
-        </div>
-        <div class="wrapper-submissions">
-            <div class="title">
-                All submissions
-            </div>
-            <div class="row">
-                {% for recipe in allRecipes %}
-                    {% if recipe.author != user %}
-                        <div class="col-xs-6 col-sm-6 col-md-4 item">
-                            <div class="wrapper-image">
-                                <img src="{{recipe.image.url}}">
-                                {% if perms.cooking.change_recipe %}
-                                <a href="{% url 'update-recipe' recipe.pk%}" class="viewall --sm --dark">Change</a>
-                                {% else %}
-                                <a href="recipe.get_absolute_url" class="viewall --sm --dark">View</a>
-                                {% endif %}
-                            </div>
-                            <div class="wrapper-status">
-                                {% if recipe.published %}
-                                <span class="status">Published</span>
-                                <span class="iconify dot" data-inline="false" data-icon="entypo:dot-single"></span>
-                                {% else %}
-                                <span class="status">Not Published</span>
-                                <span class="iconify dot" data-inline="false" data-icon="entypo:dot-single" style="color:Red"></span>
-                                {% endif %}
-                            </div>
-                            <div class="item-title">{{recipe.title}}</div>
-                        </div>
-                    {% endif %}
-                {% endfor %}
-            </div>
-        </div>
-    </section>
-</section>
+    {% if perms.cooking.add_recipe %}
+        <p><a href="/accounts/add/recipe/" style="font-size:40px;">Add Recipe</a></p>
+    {% endif %}
 {% endif %}
+
+<p><a href="{% url 'logout' %}" style="font-size:32px">Logout</a></p>
+<!--<li>-->
+<!--    {% for item in allRecipes %}-->
+<!--        {% if item.author == user %}-->
+<!--        <ul>-->
+<!--            {{item.title}}-->
+<!--        </ul>-->
+<!--        {% endif %}-->
+<!--    {% endfor %}-->
+<!--</li>-->
+
 {% endblock %}
