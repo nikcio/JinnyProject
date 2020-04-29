@@ -69,7 +69,7 @@
                                 {% if perms.cooking.change_recipe %}
                                 <a href="{% url 'update-recipe' recipe.pk%}" class="viewall --sm --dark">Change</a>
                                 {% else %}
-                                <a href="recipe.get_absolute_url" class="viewall --sm --dark">View</a>
+                                <a href="{{recipe.get_absolute_url}}" class="viewall --sm --dark">View</a>
                                 {% endif %}
                             </div>
                             <div class="wrapper-status">
