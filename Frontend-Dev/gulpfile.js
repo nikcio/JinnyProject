@@ -37,21 +37,8 @@ const browserSync = require('browser-sync');
 const path = require('path');
 const config = require('./gulp-config');
 
-// Select the html files to inject css and js into
-const pagesToInject = [
-	"html/index.html",
-	"html/viewall.html",
-	"html/about.html",
-	"html/detail.html",
-	"html/login.html",
-	"html/add_recipe.html"
-];
-
-const basePages = [];
-
-pagesToInject.forEach(function(element) {
-	basePages.push(config.base + element);
-});
+// HTML files to inject into
+const basePages = config.Injectpages;
 
 /**
  * Tasks =========================================================================================
@@ -125,11 +112,23 @@ function injectToHTML() {
 	];
 	const d = "?" + Date.now();
 	return gulp.src(basePages)
-		.pipe(inject(gulp.src(sources, {read: false}), {
+		.pipe(gulpif(config.settings.fileVersion, 
+			inject(gulp.src(sources, {read: false}), {
 			addRootSlash: false,
 			ignorePath: config.dist,
 			addSuffix: d
-		}))
+		}), inject(gulp.src(sources, {read: false}), {
+			addRootSlash: false,
+			ignorePath: config.dist
+		})))
+		.pipe(inject(gulp.src([config.partials]), {
+			starttag: '<!-- inject:partial:{{path}} -->',
+			relative: true,
+			transform: function (filePath, file) {
+			  // return file contents as string
+			  return file.contents.toString('utf8')
+			}
+		  }))
 		.pipe(fileInclude().on('error', function() {
 			console.log(arguments);
 		}))
@@ -185,7 +184,7 @@ function reload(done) {
 function serve(done) {
 	server.init({
 		server: {
-			baseDir: config.dist
+			baseDir: config.distHTML
 			}
 	});
 	done();
@@ -198,7 +197,7 @@ function watch (){
 	gulp.watch(config.video, gulp.series(video));
 	gulp.watch(config.svg, gulp.series(svg));
 	gulp.watch(config.fonts, gulp.series(fonts));
-	gulp.watch(config.watchHTML, gulp.series(injectToHTML, reload));
+	gulp.watch(config.html, gulp.series(injectToHTML, reload));
 }
 
 
