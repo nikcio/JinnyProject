@@ -4,6 +4,7 @@
 {% block head %}
     <link rel="stylesheet" href="{% static 'user_management/css/dashboard.css' %}{{version}}">
     <link rel="stylesheet" href="{% static 'jinny_cooking/css/frontpage.css' %}{{version}}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-grid-only@1.0.0/bootstrap.min.css">
 {% endblock %}
 
 {% block content %}
@@ -21,14 +22,14 @@
         {% endif %}
     </section>
     <section class="wrapper-content">
-        <div class="wrapper-submissions">
+        <div class="wrapper-submissions  col-12 col-xs-6">
             <div class="title">
                 Your submissions
             </div>
             <div class="row">
                 {% for recipe in allRecipes %}
                     {% if recipe.author == user %}
-                        <div class="item">
+                        <div class="col-xs-6 col-sm-6 col-md-4 item">
                             <div class="wrapper-image">
                                 <img src="{{recipe.image.url}}">
                                 {% if perms.cooking.change_recipe %}
@@ -46,7 +47,7 @@
                                 <span class="iconify dot" data-inline="false" data-icon="entypo:dot-single" style="color:Red"></span>
                                 {% endif %}
                             </div>
-                            <span class="item-title">{{recipe.title}}</span>
+                            <div class="item-title">{{recipe.title}}</div>
                         </div>
                     {% endif %}
                 {% endfor %}
@@ -62,7 +63,7 @@
             <div class="row">
                 {% for recipe in allRecipes %}
                     {% if recipe.author != user %}
-                        <div class="item">
+                        <div class="col-xs-6 col-sm-6 col-md-4 item">
                             <div class="wrapper-image">
                                 <img src="{{recipe.image.url}}">
                                 {% if perms.cooking.change_recipe %}
@@ -80,7 +81,7 @@
                                 <span class="iconify dot" data-inline="false" data-icon="entypo:dot-single" style="color:Red"></span>
                                 {% endif %}
                             </div>
-                            <span class="item-title">{{recipe.title}}</span>
+                            <div class="item-title">{{recipe.title}}</div>
                         </div>
                     {% endif %}
                 {% endfor %}
