@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, FormView
-from django.views.generic.edit import UpdateView
 from user_management import forms
 from cooking import models
 from django.utils import timezone
@@ -9,21 +8,6 @@ from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.shortcuts import render, redirect
 from website.version import v
-
-
-class UpdateRecipe(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
-    permission_required = 'cooking.change_recipe'
-    model = models.Recipe
-    fields = ['title', 'video', 'description', 'image']
-    template_name = 'user_management/update_recipe.html'
-    success_url = '/accounts/dashboard/'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['navigation'] = models.Navigation.objects.all()[0]
-        context['socials'] = models.Social.objects.all()
-        context['version'] = v
-        return context
 
 
 class AddRecipe(LoginRequiredMixin, PermissionRequiredMixin, FormView):
@@ -54,7 +38,7 @@ class Dashboard(LoginRequiredMixin, TemplateView):
         context = super().get_context_data(**kwargs)
         context['navigation'] = models.Navigation.objects.all()[0]
         context['socials'] = models.Social.objects.all()
-        context['allRecipes'] = models.Recipe.objects.order_by("-published")
+        context['allRecipes'] = models.Recipe.objects.all()
         context['version'] = v
         return context
 

@@ -6,7 +6,7 @@ var root = 'src/',
 	video = root + 'assets/video/**/*',
 	svg =  root + 'assets/svg/*.svg',
 	fonts = root + 'assets/fonts/**/*',
-	html = root + 'html/**/*.html';
+
 
 	dist = 'dist/',	
 	distCSS = dist + 'css/',
@@ -15,29 +15,19 @@ var root = 'src/',
 	distVideo = dist + 'video/',
 	distSVG = dist + 'svg/',
 	distFonts = dist + 'fonts/',
-	distHTML = dist + '';
 
 
 	injectSourceCSS = distCSS + '/**/*.css',
 	injectSourceJS = distJS + '/**/*.js',
-	
-
-	partials = root + 'html/partials/**/*.html'
+	watchHTML = root + '**/*.html';
 
 // These settings change how the output of gulp are processed
 // isBuild will determine if css and js will be minified
 // createSourcemaps will determine if sassFormat will create sourcemaps
 const settings = {
 	isBuild: true,
-	createSourcemaps: false,
-	fileVersion: true
+	createSourcemaps: false
 };
-
-// Place all files you want to work on here. Example: "index.html" or "html/index.html"
-// Standard is all HTML files
-const Injectpages = [
-	html
-];
 	
 
 module.exports  = {
@@ -61,12 +51,7 @@ module.exports  = {
 
 	injectSourceCSS: injectSourceCSS,
 	injectSourceJS: injectSourceJS,
-	html: html,
-	distHTML: distHTML,
-
-	partials: partials,
+	watchHTML: watchHTML,
 
 	settings: settings,
-
-	Injectpages: Injectpages,
 }
