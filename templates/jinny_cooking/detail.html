@@ -6,6 +6,10 @@
     <meta name="description" content="Try out a new {{object.title}} recipe it is bound to be exciting. Made by {{object.author}} for the Jinnytty website.">
     <meta name="keywords" content="{{object.get_keywords}}">
     <meta name="author" content="{{object.author.name}}">
+    <meta property="og:image" content="{{object.image.url}}">
+    <meta property="og:image:width" content="400">
+    <meta property="og:image:height" content="300">
+    <meta property="og:type" content="article"/>
 {% endblock %}
 
 {% block header %}
