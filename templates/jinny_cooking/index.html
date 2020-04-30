@@ -16,7 +16,7 @@
             <a href="#scroll-section"><span class="iconify down" data-inline="false" data-icon="bx:bx-chevron-down" style="font-size: 88px;"></span></a>
         </div>
         <div class="poly">
-            <img src="{% static 'jinny_cooking/img/Poly-Frontpage.png' %}" class="frontpage-poly" alt="Background">
+            <img src="{% static 'jinny_cooking/img/Poly-Frontpage.png' %}" class="frontpage-poly" alt="Jinnytty website dinosaur background" title="Jinnytty website dinosaur background">
             <video class="gif" autoplay loop muted playsinline>
                 <source src="{% static 'jinny_cooking/video/JinnyDance.webm' %}" type="video/webm">
                 <source src="{% static 'jinny_cooking/video/JinnyDance.mp4' %}" type="video/mp4">
@@ -32,7 +32,7 @@
             <div class="row">
                 {% for recipe in recipes %}
                 <a class="item" href="{{recipe.get_absolute_url}}">
-                    <img data-src="{{recipe.image.url}}" class="lazyload" alt="{{recipe.title}}">
+                    <img data-src="{{recipe.image.url}}" class="lazyload" alt="{{recipe.title}}" title="{{recipe.title}}">
                     <span>{{recipe.title}}</span>
                 </a>
                 {% endfor %}
