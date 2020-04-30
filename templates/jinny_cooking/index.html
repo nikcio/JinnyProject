@@ -17,7 +17,7 @@
         <div class="title">
             <h1>{{frontpage.title}}</h1>
             <h2>{{frontpage.subtitle}}</h2>
-            <a href="#scroll-section"><span class="iconify down" data-inline="false" data-icon="bx:bx-chevron-down" style="font-size: 88px;"></span></a>
+            <a href="#scroll-section" id="scroll-down" title="scroll to recipes"><span class="iconify down" data-inline="false" data-icon="bx:bx-chevron-down" style="font-size: 88px;"></span></a>
         </div>
         <div class="poly">
             <img src="{% static 'jinny_cooking/img/Poly-Frontpage.png' %}" class="frontpage-poly" alt="Jinnytty website dinosaur background" title="Jinnytty website dinosaur background">
@@ -35,14 +35,14 @@
         <div class="collcetion">
             <div class="row">
                 {% for recipe in recipes %}
-                <a class="item" href="{{recipe.get_absolute_url}}">
+                <a class="item" href="{{recipe.get_absolute_url}}" title="{{ recipe.title }}">
                     <img data-src="{{recipe.image.url}}" class="lazyload" alt="{{recipe.title}}" title="{{recipe.title}}">
                     <span>{{recipe.title}}</span>
                 </a>
                 {% endfor %}
             </div>
         </div>
-        <a href="/recipes" class="viewall">
+        <a href="/recipes" class="viewall" title="View all recipes">
             {{frontpage.button_title}}
             <span class="iconify icon" data-inline="false" data-icon="ic:outline-arrow-right-alt"></span>
         </a>

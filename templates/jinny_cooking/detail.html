@@ -21,7 +21,7 @@
         <h1>{{object.title}}</h1>
         <span>{{object.date}}</span>
         {% if object.video != null %}
-        <a href="{{object.video}}" target="_blank" class="watch-video">Watch video</a>
+        <a href="{{object.video}}" target="_blank" class="watch-video" title="Watch video">Watch video</a>
         {% endif %}
         <p>{{object.description}}</p>
         <img data-src="{{object.image.url}}" class="lazyload" alt="{{recipe.title}}" title="{{recipe.title}}">
