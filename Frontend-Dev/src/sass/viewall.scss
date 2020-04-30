@@ -75,6 +75,45 @@ section.viewall{
             top: 7px;
         }
     }
+
+    .pagination{
+
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        align-items: center;
+        text-align: center;
+        color: #000000;
+
+        .page{
+            color: #000000;
+            display: inline-flex;
+            
+            height: 40px;
+            padding: 0 15px;
+            align-items: center;
+
+            &.current{
+                color: #ffffff;
+                background-color: #000000;
+                border-radius: 5px;
+            }
+
+            &.current:hover{
+                cursor: default;
+            }
+        }
+
+        .chervon{
+            font-size: 30px;
+            color: #000000;
+            position: relative;
+            top:7px;
+
+        }
+        
+    }
 }
 
 @media only screen and (max-width: 800px){
