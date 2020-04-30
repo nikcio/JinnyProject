@@ -4,6 +4,7 @@ from django.dispatch import receiver
 from django.urls import reverse
 from django.utils.text import slugify
 from django.contrib.auth.models import User
+import re
 
 
 # class Author(models.Model):
@@ -38,6 +39,10 @@ class Recipe(models.Model):
     
     def get_absolute_url(self):
         return reverse('recipe-detail', kwargs={'slug': self.slug})
+
+    def get_keywords(self):
+        o = re.sub(r'[^A-Za-z0-9]+', ', ', self.title)
+        return re.sub(r'[^A-Za-z0-9]+$', '', o)
 
 
 @receiver(post_delete, sender=Recipe)
