@@ -3,6 +3,9 @@
 
 {% block head %}
     <link rel="stylesheet" href="{% static 'jinny_cooking/css/detail.css' %}{{version}}">
+    <meta name="description" content="Try out a new {{object.title}} recipe it is bound to be exciting. Made by {{object.author}} for the Jinnytty website.">
+    <meta name="keywords" content="{{object.get_keywords}}">
+    <meta name="author" content="{{object.author.name}}">
 {% endblock %}
 
 {% block header %}

@@ -3,6 +3,9 @@
 
 {% block head %}
     <link rel="stylesheet" href="{% static 'jinny_cooking/css/frontpage.css' %}{{version}}">
+    <meta name="description" content="Find new and exciting recipes created by Jinnytty.">
+    <meta name="keywords" content="Jinnytty, Recipes, Food">
+    <meta name="author" content="Nikcio">
 {% endblock %}
 
 {% block header %}
@@ -13,7 +16,7 @@
             <a href="#scroll-section"><span class="iconify down" data-inline="false" data-icon="bx:bx-chevron-down" style="font-size: 88px;"></span></a>
         </div>
         <div class="poly">
-            <img src="{% static 'jinny_cooking/img/Poly-Frontpage.png' %}" class="frontpage-poly">
+            <img src="{% static 'jinny_cooking/img/Poly-Frontpage.png' %}" class="frontpage-poly" alt="Background">
             <video class="gif" autoplay loop muted playsinline>
                 <source src="{% static 'jinny_cooking/video/JinnyDance.webm' %}" type="video/webm">
                 <source src="{% static 'jinny_cooking/video/JinnyDance.mp4' %}" type="video/mp4">
