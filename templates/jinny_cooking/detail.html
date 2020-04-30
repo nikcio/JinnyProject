@@ -3,6 +3,13 @@
 
 {% block head %}
     <link rel="stylesheet" href="{% static 'jinny_cooking/css/detail.css' %}{{version}}">
+    <meta name="description" content="Try out a new {{object.title}} recipe it is bound to be exciting. Made by {{object.author}} for the Jinnytty website.">
+    <meta name="keywords" content="{{object.get_keywords}}">
+    <meta name="author" content="{{object.author.name}}">
+    <meta property="og:image" content="{{object.image.url}}">
+    <meta property="og:image:width" content="400">
+    <meta property="og:image:height" content="300">
+    <meta property="og:type" content="article"/>
 {% endblock %}
 
 {% block header %}
@@ -14,9 +21,9 @@
         <h1>{{object.title}}</h1>
         <span>{{object.date}}</span>
         {% if object.video != null %}
-        <a href="{{object.video}}" target="_blank" class="watch-video">Watch video</a>
+        <a href="{{object.video}}" target="_blank" class="watch-video" title="Watch video">Watch video</a>
         {% endif %}
         <p>{{object.description}}</p>
-        <img data-src="{{object.image.url}}" class="lazyload" alt="{{recipe.title}}">
+        <img data-src="{{object.image.url}}" class="lazyload" alt="{{recipe.title}}" title="{{recipe.title}}">
     </section>
 {% endblock %}

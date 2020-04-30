@@ -8,6 +8,7 @@
     <!-- © Nikcio 2020 -->
     <meta charset="UTF-8">
     <title>Cooking with Jinny</title>
+    <meta property="og:title" content="Cooking with Jinny"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
     <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="{% static '/jinny_cooking/fav/apple-touch-icon.png' %}">
@@ -23,18 +24,20 @@
     <link rel="stylesheet" href="{% static 'jinny_cooking/css/Base.css' %}{{version}}">
     {% block head %}{% endblock %}
     <!-- endinject -->
+    <meta property="og:site_name" content="https:/jinnytty.com/"/>
+    <meta property="og:url" content="https:/jinnytty.com/"/>
 </head>
 <body>
     <nav>
-        <a href="/" class="nav-item logo"><img src="{% static 'jinny_cooking/img/Jinnytty.png' %}"></a>
+        <a href="/" class="nav-item logo" title="homepage"><img src="{% static 'jinny_cooking/img/Jinnytty.png' %}" alt="Jinnytty logo" title="Jinnytty logo"></a>
         <div class="right">
             <div class="menu-container">
                 <span onclick="showMenu()" class="iconify toggle" data-inline="false" data-icon="ion:menu"></span>
                 <span onclick="closeMenu()" class="iconify close" data-inline="false" data-icon="ic:sharp-close"></span>
                 {% for item in navigation.items.all %}
-                   <a href="{{item.link}}" class="nav-item">{{item.title}}</a>
+                   <a href="{{item.link}}" class="nav-item" title="{{item.link}}">{{item.title}}</a>
                 {% endfor %}
-                <a href="#" class="nav-item last lang">
+                <a href="#" class="nav-item last lang" title="language">
                     <span class="iconify flag" data-inline="false" data-icon="emojione:flag-for-us-outlying-islands"></span>
                     <span class="iconify expand" data-inline="false" data-icon="ant-design:caret-down-outlined"></span>
                 </a>
@@ -51,20 +54,20 @@
     <section class="footer">
         <div>
             {% for item in navigation.items.all %}
-                <a href="{{item.link}}">{{item.title}}</a>
+                <a href="{{item.link}}" title="{{item.title}}">{{item.title}}</a>
             {% endfor %}
         </div>
         <div>
             {% for item in socials %}
-            <a href="{{item.link}}" target="_blank"><span class="iconify" data-inline="false" data-icon="cib:{{item.type}}"></span></a>
+            <a href="{{item.link}}" target="_blank" title="{{item.type}}"><span class="iconify" data-inline="false" data-icon="cib:{{item.type}}"></span></a>
             {% endfor %}
         </div>
-        <a href="https://nikcio.com/" target="_blank" class="copyright">© Nikcio 2020</a>
+        <a href="https://nikcio.com/" target="_blank" class="copyright" title="Nikcio.com">© Nikcio 2020</a>
         <div class="bottom-banner"></div>
     </section>
 
     <!-- inject:js -->
-    <script src="{% static 'jinny_cooking/js/combined.js' %}"{{version}}></script>
+    <script src="{% static 'jinny_cooking/js/combined.js' %}{{version}}"></script>
     <!-- endinject -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
