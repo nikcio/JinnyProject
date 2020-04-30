@@ -42,7 +42,7 @@ class Detail(DetailView):
 
 class ViewAll(ListView):
     template_name = "jinny_cooking/viewall.html"
-    paginate_by = 2
+    paginate_by = 9
     model = models.Recipe
 
     def get_queryset(self):
