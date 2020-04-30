@@ -31,8 +31,17 @@
                 </a>
             </div>
         </div>
-    </section>
 
+        <div class="pagination">
+            <span class="step-links">
+                    <a class="page" href="?page={{ page_obj.previous_page_number }}"><span class="iconify chervon" data-inline="false" data-icon="eva:arrow-ios-back-fill"></span></a>
+                    <a class="page" href="?page={{ page_obj.previous_page_number }}">0</a>
+                    <span class="current page">1</span>
+                    <a class="page" href="?page={{ page_obj.previous_page_number }}">2</a>
+                    <a class="page" href="?page={{ page_obj.next_page_number }}"><span class="iconify chervon" data-inline="false" data-icon="eva:arrow-ios-forward-outline"></span></a>
+            </span>
+        </div>
+    </section>
     <!-- inject:partial:partials/footer.html -->
     <!-- endinject -->
 
