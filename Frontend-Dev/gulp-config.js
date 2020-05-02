@@ -15,7 +15,7 @@ var root = 'src/',
 	distVideo = dist + 'video/',
 	distSVG = dist + 'svg/',
 	distFonts = dist + 'fonts/',
-	distHTML = dist + '';
+	distHTML = dist + '',
 
 
 	injectSourceCSS = distCSS + '/**/*.css',
