@@ -142,11 +142,11 @@ LOGIN_URL = '/accounts/login/'
 
 LOGIN_REDIRECT_URL = '/accounts/dashboard'
 
-SENDGRID_API_KEY = os.getenv('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')
+SENDGRID_API_KEY = os.getenv('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')
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.sendgrid.net' # mail service smtp
-EMAIL_HOST_USER = 'noreplyjinnytty' # email id
+EMAIL_HOST_USER = 'jinnytty' # email id
 EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
