@@ -144,8 +144,8 @@ LOGIN_REDIRECT_URL = '/accounts/dashboard'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.sendgrid.net' # mail service smtp
-EMAIL_HOST_USER = 'jinny site' # email id
-EMAIL_HOST_PASSWORD = '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' #password
+EMAIL_HOST_USER = 'noreplyjinnytty' # email id
+EMAIL_HOST_PASSWORD = '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' #password
 EMAIL_PORT = 465
 EMAIL_USE_SSL = True
 
