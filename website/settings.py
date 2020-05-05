@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -142,12 +144,17 @@ LOGIN_URL = '/accounts/login/'
 
 LOGIN_REDIRECT_URL = '/accounts/dashboard'
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.sendgrid.net' # mail service smtp
-EMAIL_HOST_USER = 'jinnytty' # email id
-EMAIL_HOST_PASSWORD = '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'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
+#Mail
+
+EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
+SENDGRID_API_KEY = os.environ.get("SENDGRID_API_KEY")
+SENDGRID_SANDBOX_MODE_IN_DEBUG = False
+SENDGRID_ECHO_TO_STDOUT=True
+# EMAIL_HOST = 'smtp.sendgrid.net' # mail service smtp
+# EMAIL_HOST_USER = 'jinnytty' # email id
+# EMAIL_HOST_PASSWORD = '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'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
 
 #Security
 
