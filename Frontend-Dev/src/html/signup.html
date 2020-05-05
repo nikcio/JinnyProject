@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- inject:partial:partials/head.html -->
+    <!-- endinject -->
+    <!-- inject:css -->
+    <!-- endinject -->
+</head>
+<body>
+    <!-- inject:partial:partials/nav.html -->
+    <!-- endinject -->
+
+    <h2>Sign up</h2>
+  <form method="post">
+    <input type="hidden" name="csrfmiddlewaretoken" value="T2BAD9s26jWV1i5Em4CjcUv5qe2CEPGMCqaBhsEaGaFPEXYNkEBhowOml3bl7HfM">
+
+      <p>
+        <label for="id_username">Username:</label><br>
+        <input type="text" name="username" maxlength="150" autofocus required id="id_username">
+
+          <small style="color: grey">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</small>
+
+
+      </p>
+
+      <p>
+        <label for="id_email">Email:</label><br>
+        <input type="email" name="email" maxlength="254" required id="id_email">
+
+          <small style="color: grey">Required. Inform a valid email address.</small>
+
+
+      </p>
+
+      <p>
+        <label for="id_password1">Password:</label><br>
+        <input type="password" name="password1" autocomplete="new-password" required id="id_password1">
+
+          <small style="color: grey"><ul><li>Your password can’t be too similar to your other personal information.</li><li>Your password must contain at least 8 characters.</li><li>Your password can’t be a commonly used password.</li><li>Your password can’t be entirely numeric.</li></ul></small>
+
+
+      </p>
+
+      <p>
+        <label for="id_password2">Password confirmation:</label><br>
+        <input type="password" name="password2" autocomplete="new-password" required id="id_password2">
+
+          <small style="color: grey">Enter the same password as before, for verification.</small>
+
+
+      </p>
+
+    <button type="submit">Sign up</button>
+  </form>
+
+    <!-- inject:partial:partials/footer.html -->
+    <!-- endinject -->
+    <!-- inject:js -->
+    <!-- endinject -->
+</body>
+</html>
