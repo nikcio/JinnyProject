@@ -27,7 +27,7 @@ SECRET_KEY = 'c#m7h&f^d$-f(%6sphaohkj^(0h(tq%6qdj^09=33bb1^-0z9l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["jinnytty.com", "www.jinnytty.com", "localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ["jinnytty.com", "www.jinnytty.com", "localhost", "127.0.0.1", "209.97.189.96"]
 
 
 # Application definition
