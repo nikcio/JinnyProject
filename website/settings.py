@@ -150,11 +150,12 @@ EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
 SENDGRID_API_KEY = os.environ.get("SENDGRID_API_KEY")
 SENDGRID_SANDBOX_MODE_IN_DEBUG = False
 SENDGRID_ECHO_TO_STDOUT=True
-# EMAIL_HOST = 'smtp.sendgrid.net' # mail service smtp
-# EMAIL_HOST_USER = 'jinnytty' # email id
-# EMAIL_HOST_PASSWORD = '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'
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'noreplyjinnytty@jinnytty.com'
+EMAIL_HOST = 'smtp.sendgrid.net' # mail service smtp
+EMAIL_HOST_USER = 'jinnytty' # email id
+EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
 #Security
 
